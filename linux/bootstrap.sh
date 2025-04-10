@@ -241,7 +241,7 @@ core3_bootstrap() {
 
     msg "Using ${RUN_USER} in ${HOME_DIR}"
 
-    export REPO_PUBLIC_URL=${REPO_PUBLIC_URL:-'https://github.com/swgemu'}
+    export REPO_PUBLIC_URL=${REPO_PUBLIC_URL:-'https://github.com/Mythor/Valcyn'}
     export REPO_PUBLIC_BRANCH=${REPO_PUBLIC_BRANCH:-'unstable'}
 
     echo -e 'Dpkg::Progress-Fancy "1";\nAPT::Color "1";' > /etc/apt/apt.conf.d/99fancy
@@ -258,7 +258,7 @@ core3_bootstrap() {
 
     cd "${HOME_DIR}" || exit
 
-    wget -qO /tmp/firstboot https://raw.githubusercontent.com/swgemu/Core3/unstable/docker/files/firstboot/functions ||
+    wget -qO /tmp/firstboot https://raw.githubusercontent.com/Mythor/Valcyn/refs/heads/unstable/docker/files/firstboot/functions ||
         error "Failed to download firstboot setup. GET HELP." 103
 
     msg "Loading firstboot functions..."

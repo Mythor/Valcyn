@@ -110,8 +110,8 @@ void ResourceSpawner::setSpawningParameters(bool loadFromScript, const int dur, 
 
 	spawnThrottling = throt;
 
-	if (spawnThrottling > 90)
-		spawnThrottling = 90;
+	if (spawnThrottling > 100)
+		spawnThrottling = 100;
 	if (spawnThrottling < 10)
 		spawnThrottling = 10;
 
@@ -623,13 +623,13 @@ int ResourceSpawner::randomizeValue(int min, int max) {
 
 long ResourceSpawner::getRandomExpirationTime(const ResourceTreeEntry* resourceEntry) {
 	if (resourceEntry->isOrganic())
-		return getRandomUnixTimestamp(6, 22);
+		return getRandomUnixTimestamp(60, 180);
 
 	else if (resourceEntry->isJTL())
-		return getRandomUnixTimestamp(13, 22);
+		return getRandomUnixTimestamp(60, 180);
 
 	else
-		return getRandomUnixTimestamp(6, 11);
+		return getRandomUnixTimestamp(60, 180);
 }
 
 long ResourceSpawner::getRandomUnixTimestamp(int min, int max) const {
@@ -992,7 +992,7 @@ void ResourceSpawner::sendSampleResults(TransactionLog& trx, CreatureObject* pla
 		return;
 	}
 
-	int maxUnitsExtracted = (int) (density * (25 + System::random(3)));
+	int maxUnitsExtracted = (int) (density * (100000 + System::random(3)));
 
 	float cityMultiplier = 1.f + player->getSkillMod("private_spec_samplesize") / 100.f;
 

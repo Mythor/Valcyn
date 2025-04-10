@@ -158,8 +158,8 @@ void ResourceManagerImplementation::loadDefaultConfig() {
 	resourceSpawner->addZone("tatooine");
 	resourceSpawner->addZone("endor");
 
-	shiftInterval = 7200000;
-	resourceSpawner->setSpawningParameters(1, 86400, 90, 1000, 0);
+	shiftInterval = 72000000;
+	resourceSpawner->setSpawningParameters(1, 8640000, 100, 1000, 0);
 }
 
 void ResourceManagerImplementation::stop() {
